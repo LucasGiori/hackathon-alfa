@@ -3,6 +3,7 @@
 use App\Http\Controllers\AulaController;
 use App\Http\Controllers\CorController;
 use App\Http\Controllers\MarcaController;
+use App\Http\Controllers\VeiculoController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -43,12 +44,12 @@ Route::middleware(['auth'])->group(function(){
     Route::put('marca/{id}', [MarcaController::class, 'update']);
     Route::delete('marca/{id}', [MarcaController::class, 'destroy']);
 
-    Route::get('veiculo',[CorController::class,'index']);
-    Route::get('veiculo/nova',[CorController::class,'create']);
-    Route::post('veiculo',[CorController::class,'store']);
-    Route::get('veiculo/{id}/editar', [CorController::class, 'edit']);
-    Route::put('veiculo/{id}', [CorController::class, 'update']);
-    Route::delete('veiculo/{id}', [CorController::class, 'destroy']);
+    Route::get('veiculo',[VeiculoController::class,'index']);
+    Route::get('veiculo/nova',[VeiculoController::class,'create']);
+    Route::post('veiculo',[VeiculoController::class,'store']);
+    Route::get('veiculo/{id}/editar', [VeiculoController::class, 'edit']);
+    Route::put('veiculo/{id}', [VeiculoController::class, 'update']);
+    Route::delete('veiculo/{id}', [VeiculoController::class, 'destroy']);
 });
 
 
