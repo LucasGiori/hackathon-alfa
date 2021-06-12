@@ -138,12 +138,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/cor" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/admin-laravel/resources/views/marca" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/admin-laravel/resources/views/marca" />
       <recent name="$PROJECT_DIR$/resources/views/cor" />
     </key>
   </component>
@@ -162,7 +163,7 @@
       <option name="presentableId" value="Default" />
       <updated>1623367224081</updated>
       <workItem from="1623367236946" duration="9360000" />
-      <workItem from="1623432554380" duration="13604000" />
+      <workItem from="1623432554380" duration="16173000" />
     </task>
     <servers />
   </component>
