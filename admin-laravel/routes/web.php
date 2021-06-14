@@ -22,7 +22,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 //
-Route::middleware(['auth'])->group(function(){
+Route::middleware(['auth','XssSanitizer'])->group(function(){
     Route::get('aulas', [AulaController::class, 'index']);
     Route::get("aulas/nova", [AulaController::class, 'create']);
     Route::post("aulas", [AulaController::class, 'store']);

@@ -31,7 +31,7 @@ class CorUpdateRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'cor.required' => "CorController é obrigatória!"
+            'cor.required' => "Cor é obrigatória!"
         ];
     }
 }
