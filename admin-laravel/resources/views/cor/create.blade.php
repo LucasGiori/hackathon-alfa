@@ -2,6 +2,15 @@
 
 @section('title', 'Salvar Cor')
 @section('content')
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+    <h3 class="float-left">Cadastrar uma Cor</h3>
+    
+    </div>
+    <div class="card-body">
+    
+    <div class="clearfix"></div>
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -26,6 +35,9 @@
             <button type="submit" class="btn btn-primary">Salvar</button>
             <a href="/cor" class="btn btn-danger">Cancelar</a>
         </form>
+    </div>
+  </div>
+</div>
 @endsection
 
 

@@ -2,6 +2,17 @@
 
 @section('title', 'Editar Marca')
 @section('content')
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+    <h3 class="float-left">Editar Veículo</h3>
+    <div class="float-right">
+      <a href="veiculo/nova" class="btn btn-primary">Novo Veículo</a>
+    </div>
+    </div>
+    <div class="card-body">
+    
+    <div class="clearfix"></div>
     <form action="/marca/{{$marca->id}}" method="POST">
                 @method('put')
                 @csrf
@@ -18,6 +29,9 @@
             <button type="submit" class="btn btn-primary">Salvar</button>
         <a href="/marca" class="btn btn-danger">Cancelar</a>
     </form>
+    </div>
+  </div>
+</div>
 @endsection
 
 

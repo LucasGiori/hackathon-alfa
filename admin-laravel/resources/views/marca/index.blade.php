@@ -3,14 +3,23 @@
 @section('title', 'Marcas')
 @section('content')
 @include('flash-message')
-
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+    <h3 class="float-left">Listagem de Marca</h3>
+    <div class="float-right">
+    <a href="marca/nova" class="btn btn-primary">Nova Marca</a>
+    </div>
+    </div>
+    <div class="card-body">
+    <div class="clearfix"></div>
   <table class="table table-striped table-hover">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Marca</th>
                 <th></th>
-                <th></th>
+                
             </tr>
         </thead>
         <tbody>
@@ -35,6 +44,6 @@
             @endforeach
         </tbody>
   </table>
-  <a href="marca/nova" class="btn btn-primary">Nova</a>
+  
 
   @endsection
