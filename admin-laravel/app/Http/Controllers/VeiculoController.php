@@ -95,4 +95,24 @@ class VeiculoController extends Controller
 
         return $veiculo;
     }
+
+    public function getById(int $id)
+    {
+        $veiculo = Veiculo::find($id);
+        $cor = Cor::find($veiculo->cor_id);
+        $marca = Marca::find($veiculo->marca_id);
+
+        $data = $veiculo->toArray();
+        $data["cor"] = $cor->toArray();
+        $data["marca"] = $marca->toArray();
+
+        return response()->json($data);
+    }
+
+    public function findAll()
+    {
+        $veiculo = Veiculo::all();
+
+        return response()->json($veiculo);
+    }
 }
