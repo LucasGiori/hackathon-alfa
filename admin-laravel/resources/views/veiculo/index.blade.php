@@ -36,7 +36,15 @@
             @foreach($veiculos as $veiculo)
             <tr>
                 <td>{{$veiculo->id}}</td>
+                <td>{{$veiculo->modelo}}</td>
                 <td>{{$veiculo->anomodelo}}</td>
+                <td>{{$veiculo->anofabricacao}}</td>
+                <td>{{number_format($veiculo->valor,2,",",".")}}</td>
+                <td>{{$veiculo->tipo}}</td>
+                <td>{{$veiculo->opcionais}}</td>
+                <td>{{$veiculo->marca}}</td>
+                <td>{{$veiculo->cor}}</td>
+                <td><img class="img-thumbnail" width="100px" src="{{(Storage::url($veiculo->fotoDestaque))}}" alt=""></td>
                 <td>
                   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                       <a class="btn btn-success btn-sm" href="veiculo/{{$veiculo->id}}/editar">

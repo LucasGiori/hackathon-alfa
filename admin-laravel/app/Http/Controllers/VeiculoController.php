@@ -7,6 +7,7 @@ use App\Http\Requests\VeiculoUpdateRequest;
 use App\Models\Cor;
 use App\Models\Marca;
 use App\Models\Veiculo;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +20,12 @@ class VeiculoController extends Controller
         return view(
             'veiculo.index',
             [
-                'veiculos' => Veiculo::all()
+                'veiculos' => Veiculo::addSelect(
+                    [
+                        'cor'=> Cor::select('cor')->whereColumn('id', 'veiculo.cor_id'),
+                        'marca'=> Marca::select('marca')->whereColumn('id', 'veiculo.marca_id')
+                    ]
+                )->paginate(3),
             ]
         );
     }
@@ -72,7 +78,7 @@ class VeiculoController extends Controller
             $veiculo = new Veiculo();
             $this->populatingModel($veiculo,$request)->save();
 
-            return redirect('veiculo')->with('success', 'Veiculo cadastrada com sucesso!');
+            return redirect('veiculo')->with('success', 'Veiculo cadastrado com sucesso!');
         } catch (\Throwable $th) {
             return redirect('veiculo')->with('error', sprintf('Algo deu de errado! Error: %s', $th->getMessage()));
         }
@@ -92,6 +98,49 @@ class VeiculoController extends Controller
         $veiculo->cor_id = $request->cor_id;
         $veiculo->usuario_id = Auth::user()->id;
         $veiculo->fotoDestaque = $request->fotoDestaque->store('public');
+
+        return $veiculo;
+    }
+
+    public function getById(int $id)
+    {
+        $veiculo = Veiculo::findOrFail($id);
+
+        return response()->json($this->getVeiculo($veiculo));
+    }
+
+    public function findAll()
+    {
+        $veiculo = Veiculo::all();
+
+        return response()->json($this->getVeiculo($veiculo));
+    }
+
+    private function generateLinkPublicImage(string $linkInternal)
+    {
+        $filename = str_replace('public/','',$linkInternal);
+
+        return asset(sprintf('storage/%s',$filename));
+    }
+
+    private function getVeiculo($data)
+    {
+        if($data instanceof Collection) {
+            return $data->map(function ($veiculo) {
+
+                $data = $veiculo->toArray();
+                $data["fotoDestaque"] = $this->generateLinkPublicImage($veiculo["fotoDestaque"]);
+                $data["cor"] = Cor::find($veiculo->cor_id)->toArray();
+                $data["marca"] = Marca::find($veiculo->marca_id)->toArray();
+
+                return $data;
+            });
+        }
+
+        $veiculo = $data->toArray();
+        $veiculo["fotoDestaque"] = $this->generateLinkPublicImage($veiculo["fotoDestaque"]);
+        $veiculo["cor"] = Cor::find($data->cor_id)->toArray();
+        $veiculo["marca"] = Marca::find($data->marca_id)->toArray();
 
         return $veiculo;
     }

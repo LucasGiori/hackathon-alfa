@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-//
+
 Route::middleware(['auth','XssSanitizer'])->group(function(){
     Route::get('aulas', [AulaController::class, 'index']);
     Route::get("aulas/nova", [AulaController::class, 'create']);
@@ -50,7 +50,13 @@ Route::middleware(['auth','XssSanitizer'])->group(function(){
     Route::get('veiculo/{id}/editar', [VeiculoController::class, 'edit']);
     Route::put('veiculo/{id}', [VeiculoController::class, 'update']);
     Route::delete('veiculo/{id}', [VeiculoController::class, 'destroy']);
+
+
 });
+
+Route::get('veiculo/all',[VeiculoController::class,'findAll']);
+Route::get('veiculo/{id}',[VeiculoController::class,'getById']);
+
 
 
 
