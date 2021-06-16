@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AulaController;
 use App\Http\Controllers\CorController;
+use App\Http\Controllers\MarcaController;
+use App\Http\Controllers\VeiculoController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -19,8 +21,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-//
-Route::middleware(['auth'])->group(function(){
+
+Route::middleware(['auth','XssSanitizer'])->group(function(){
     Route::get('aulas', [AulaController::class, 'index']);
     Route::get("aulas/nova", [AulaController::class, 'create']);
     Route::post("aulas", [AulaController::class, 'store']);
@@ -34,7 +36,27 @@ Route::middleware(['auth'])->group(function(){
     Route::get('cor/{id}/editar', [CorController::class, 'edit']);
     Route::put('cor/{id}', [CorController::class, 'update']);
     Route::delete('cor/{id}', [CorController::class, 'destroy']);
+
+    Route::get('marca',[MarcaController::class,'index']);
+    Route::get('marca/nova',[MarcaController::class,'create']);
+    Route::post('marca',[MarcaController::class,'store']);
+    Route::get('marca/{id}/editar', [MarcaController::class, 'edit']);
+    Route::put('marca/{id}', [MarcaController::class, 'update']);
+    Route::delete('marca/{id}', [MarcaController::class, 'destroy']);
+
+    Route::get('veiculo',[VeiculoController::class,'index']);
+    Route::get('veiculo/nova',[VeiculoController::class,'create']);
+    Route::post('veiculo',[VeiculoController::class,'store']);
+    Route::get('veiculo/{id}/editar', [VeiculoController::class, 'edit']);
+    Route::put('veiculo/{id}', [VeiculoController::class, 'update']);
+    Route::delete('veiculo/{id}', [VeiculoController::class, 'destroy']);
+
+
 });
+
+Route::get('veiculo/all',[VeiculoController::class,'findAll']);
+Route::get('veiculo/{id}',[VeiculoController::class,'getById']);
+
 
 
 

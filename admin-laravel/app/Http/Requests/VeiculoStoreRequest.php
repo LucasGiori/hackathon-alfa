@@ -32,8 +32,7 @@ class VeiculoStoreRequest extends FormRequest
             'tipo' => Rule::in(['NOVO','SEMINOVO']),
             'fotoDestaque' => 'required|image',
             'marca_id' => 'required',
-            'cor_id' => 'required',
-            'usuario_id' => 'required'
+            'cor_id' => 'required'
         ];
     }
 
@@ -47,9 +46,8 @@ class VeiculoStoreRequest extends FormRequest
             'tipo.required' => 'Tipo Veículo é obrigatório',
             'fotoDestaque.required' => 'Foto é obrigatório',
             'fotoDestaque.image' => 'A Foto deve ser uma imagem',
-            'marca_id.required' => 'MarcaController é obrigatório',
-            'cor_id.required' => 'CorController é obrigatório',
-            'usuario_id.required' => 'Usuario é obrigatório'
+            'marca_id.required' => 'Marca é obrigatório',
+            'cor_id.required' => 'Cor é obrigatório'
         ];
     }
 }

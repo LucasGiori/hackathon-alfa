@@ -9,8 +9,4 @@ class Cor extends Model
 {
     protected $table = 'cor';
 
-//    /**
-//     * @var string|null
-//     */
-//    private ?string $cor = null;
 }
