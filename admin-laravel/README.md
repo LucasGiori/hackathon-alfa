@@ -64,3 +64,6 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Caso precise de permissão
 $ sudo chown -R $(whoami) src/
+
+
+php artisan storage:link
