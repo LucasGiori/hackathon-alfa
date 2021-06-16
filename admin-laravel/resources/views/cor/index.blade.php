@@ -4,12 +4,23 @@
 @section('content')
 @include('flash-message')
 
-  <table class="table table-striped table-hover">
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+    <h3 class="float-left">Listagem de Cores</h3>
+    <div class="float-right">
+      <a href="cor/nova" class="btn btn-primary">Nova Cor</a>
+    </div>
+    </div>
+    <div class="card-body">
+    
+    <div class="clearfix"></div>
+
+    <table class="table table-striped  table-hover">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Cor</th>
-                <th></th>
                 <th></th>
             </tr>
         </thead>
@@ -35,6 +46,8 @@
             @endforeach
         </tbody>
   </table>
-  <a href="cor/nova" class="btn btn-primary">Nova</a>
+       </div>
+      </div>
+    </div>
 
   @endsection

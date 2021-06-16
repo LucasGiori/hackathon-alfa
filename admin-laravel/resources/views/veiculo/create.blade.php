@@ -3,6 +3,7 @@
 @section('title', 'Salvar Marca')
 @section('content')
     @if ($errors->any())
+   
         <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)
@@ -11,13 +12,21 @@
             </ul>
         </div>
     @endif
+    <div class="container">
+  <div class="card">
+    <div class="card-header">
+    <h3 class="float-left">Cadastrar um Veículo</h3>
+    </div>
+    <div class="card-body">
+    
+    <div class="clearfix"></div>
         <form enctype="multipart/form-data" action="/veiculo" method="POST">
             @csrf
             <div class="row">
                 <div class="col-5">
                     <label for="modelo" class="form-label @error('modelo') is-invalid @enderror">Modelo</label>
                     <input type="text" class="form-control @error('modelo') is-invalid @enderror" id="modelo" name="modelo" value="{{ old('modelo') }}">
-                    <div id="veiculoHelp" class="form-text">Informe o modelo do Veiculo. Ex: <strong>Toro Turbo 3.0</strong></div>
+                    <div id="veiculoHelp" class="form-text">Informe o modelo do Veiculo. Ex: <strong>Arizzo 6</strong></div>
                     @error('modelo')
                     <div class="invalid-feedback">
                         {{ $messages }}
@@ -27,7 +36,7 @@
                 <div class="col-2">
                     <label for="anofabricacao" class="form-label @error('anofabricacao') is-invalid @enderror">Ano Fabri.</label>
                     <input type="number" min="1" class="form-control @error('anofabricacao') is-invalid @enderror" id="anofabricacao" name="anofabricacao" value="{{ old('anofabricacao') }}">
-                    <div id="veiculoHelp" class="form-text">Ex: <strong>2019</strong></div>
+                    <div id="veiculoHelp" class="form-text">Ex: <strong>2020</strong></div>
                     @error('anofabricacao')
                     <div class="invalid-feedback">
                         {{ $messages }}
@@ -47,7 +56,7 @@
                 <div class="col-3">
                     <label for="valor" class="form-label @error('valor') is-invalid @enderror">Valor</label>
                     <input type="text" class="form-control @error('valor') is-invalid @enderror" id="valor" name="valor" onkeyup="formatReal(this.value)" value="{{ old('valor') }}">
-                    <div id="veiculoHelp" class="form-text">Informe o valor. Ex: <strong>R$ 30.000,00</strong></div>
+                    <div id="veiculoHelp" class="form-text">Informe o valor. Ex: <strong>R$ 100.000,00</strong></div>
                     @error('valor')
                     <div class="invalid-feedback">
                         {{ $messages }}
@@ -113,14 +122,14 @@
                     <label for="opcionais" class="form-label @error('opcionais') is-invalid @enderror">Opcionais</label>
                     <textarea class="form-control @error('opcionais') is-invalid @enderror" id="opcionais" name="opcionais" >{{ old('opcionais') }}</textarea>
 {{--                    <input type="text" class="form-control @error('opcionais') is-invalid @enderror" id="opcionais" name="opcionais" value="{{ old('opcionais') }}">--}}
-                    <div id="opcionaisHelp" class="form-text">Ex: <strong>- Peito de Aço</strong></div>
+                    <div id="opcionaisHelp" class="form-text">Ex: <strong>- Air Bag, Bancos em Couro</strong></div>
                     @error('opcionais')
                     <div class="invalid-feedback">
                         {{ $messages }}
                     </div>
                     @enderror
                 </div>
-            </div>
+            </div><br>
             <div class="row">
                 <div class="col-12">
                     <button type="submit" class="btn btn-primary">Salvar</button>
@@ -128,6 +137,9 @@
                 </div>
             </div>
         </form>
+    </div>
+  </div>
+    </div>
         <script>
             function formatReal(valor) {
                 valor = valor + '';
