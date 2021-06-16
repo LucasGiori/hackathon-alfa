@@ -9,6 +9,7 @@ use App\Models\Marca;
 use App\Models\Veiculo;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Query\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use function Illuminate\Events\queueable;
@@ -112,6 +113,20 @@ class VeiculoController extends Controller
     public function findAll()
     {
         $veiculo = Veiculo::all();
+
+        return response()->json($this->getVeiculo($veiculo));
+    }
+
+    public function findUsed()
+    {
+        $veiculo = Veiculo::where('tipo','SEMINOVO')->get();
+
+        return response()->json($this->getVeiculo($veiculo));
+    }
+
+    public function findNew()
+    {
+        $veiculo = Veiculo::where('tipo','NOVO')->get();
 
         return response()->json($this->getVeiculo($veiculo));
     }

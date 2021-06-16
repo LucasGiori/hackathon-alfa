@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout.template')
 
 @section('title', 'Cores')
 @section('content')
@@ -13,7 +13,7 @@
     </div>
     </div>
     <div class="card-body">
-    
+
     <div class="clearfix"></div>
 
     <table class="table table-striped  table-hover">

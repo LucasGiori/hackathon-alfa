@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout.template')
 
 @section('title', 'Marcas')
 @section('content')
@@ -19,7 +19,7 @@
                 <th>ID</th>
                 <th>Marca</th>
                 <th></th>
-                
+
             </tr>
         </thead>
         <tbody>
@@ -44,6 +44,6 @@
             @endforeach
         </tbody>
   </table>
-  
+
 
   @endsection

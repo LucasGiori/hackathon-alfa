@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout.template')
 
 @section('title', 'Editar Cor')
 @section('content')
@@ -11,7 +11,7 @@
     </div>
     </div>
     <div class="card-body">
-    
+
     <div class="clearfix"></div>
 
     <form action="/cor/{{$cor->id}}" method="POST">

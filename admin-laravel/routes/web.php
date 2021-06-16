@@ -50,15 +50,12 @@ Route::middleware(['auth','XssSanitizer'])->group(function(){
     Route::get('veiculo/{id}/editar', [VeiculoController::class, 'edit']);
     Route::put('veiculo/{id}', [VeiculoController::class, 'update']);
     Route::delete('veiculo/{id}', [VeiculoController::class, 'destroy']);
-
-
 });
 
 Route::get('veiculo/all',[VeiculoController::class,'findAll']);
+Route::get('veiculo/findused',[VeiculoController::class,'findUsed']);
+Route::get('veiculo/findnew',[VeiculoController::class,'findNew']);
 Route::get('veiculo/{id}',[VeiculoController::class,'getById']);
-
-
-
 
 Auth::routes();
 

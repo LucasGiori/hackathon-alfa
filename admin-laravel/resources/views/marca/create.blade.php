@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout.template')
 
 @section('title', 'Salvar Marca')
 @section('content')
@@ -8,7 +8,7 @@
     <h3 class="float-left">Cadastrar uma Marca</h3>
     </div>
     <div class="card-body">
-    
+
     <div class="clearfix"></div>
     @if ($errors->any())
         <div class="alert alert-danger">

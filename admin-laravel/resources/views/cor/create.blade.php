@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout.template')
 
 @section('title', 'Salvar Cor')
 @section('content')
@@ -6,10 +6,10 @@
   <div class="card">
     <div class="card-header">
     <h3 class="float-left">Cadastrar uma Cor</h3>
-    
+
     </div>
     <div class="card-body">
-    
+
     <div class="clearfix"></div>
     @if ($errors->any())
         <div class="alert alert-danger">

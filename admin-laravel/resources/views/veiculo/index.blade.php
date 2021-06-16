@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout.template')
 
 @section('title', 'Marcas')
 @section('content')
@@ -12,7 +12,7 @@
     </div>
     </div>
     <div class="card-body">
-    
+
     <div class="clearfix"></div>
 
     <table class="table table-striped  table-hover">
@@ -27,7 +27,7 @@
                 <th scope="col">Opcionais</th>
                 <th scope="col">Marca</th>
                 <th scope="col">Cor</th>
-                <th scope="col">Usuário</th>
+                <th scope="col">Imagem</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
             </tr>

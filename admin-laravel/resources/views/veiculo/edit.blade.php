@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout.template')
 
 @section('title', 'Editar Veiculo')
 @section('content')
@@ -12,7 +12,7 @@
     </div>
     </div>
     <div class="card-body">
-    
+
     <div class="clearfix"></div>
     <form action="/marca/{{$marca->id}}" method="POST">
                 @method('put')

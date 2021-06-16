@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layout.template')
 
 @section('title', 'Salvar Marca')
 @section('content')
     @if ($errors->any())
-   
+
         <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)
@@ -18,7 +18,7 @@
     <h3 class="float-left">Cadastrar um Veículo</h3>
     </div>
     <div class="card-body">
-    
+
     <div class="clearfix"></div>
         <form enctype="multipart/form-data" action="/veiculo" method="POST">
             @csrf
