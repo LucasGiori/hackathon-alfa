@@ -48,7 +48,13 @@ class VeiculoController extends Controller
     {
         $veiculo = Veiculo::findOrFail($id);
 
-        return view('veiculo.edit', ['veiculo' => $veiculo]);
+        return view('veiculo.edit',
+            [
+                'veiculo' => $veiculo,
+                'cores' => Cor::all(),
+                'marcas' => Marca::all()
+            ]
+        );
     }
 
     public function destroy($id)
@@ -62,11 +68,12 @@ class VeiculoController extends Controller
     public function update ($id, VeiculoUpdateRequest $request)
     {
         try {
+            dd("oi");
             $validated = $request->validated();
             $veiculo = Veiculo::find($id);
             $this->populatingModel($veiculo, $request)->save();
 
-            return redirect('veiculo')->with('success', 'Veiculo atualizada com sucesso');
+            return redirect('veiculo')->with('success', 'Veiculo atualizado com sucesso');
         }catch (\Throwable $th) {
             return redirect('veiculo')->with('error', 'Algo deu de errado!');
         }
