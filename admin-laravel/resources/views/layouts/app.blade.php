@@ -68,7 +68,11 @@
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
+                                           document.cookie = 'XSRF-TOKEN=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                                           document.cookie = 'laravel_session=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                                           window.location.reload();
+
+                                        ">
                                             {{ __('Sair') }}
                                         </a>
 
