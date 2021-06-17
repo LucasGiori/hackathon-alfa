@@ -26,7 +26,7 @@ class VeiculoController extends Controller
                         'cor'=> Cor::select('cor')->whereColumn('id', 'veiculo.cor_id'),
                         'marca'=> Marca::select('marca')->whereColumn('id', 'veiculo.marca_id')
                     ]
-                )->paginate(3),
+                )->paginate(),
             ]
         );
     }

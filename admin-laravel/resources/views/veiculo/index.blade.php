@@ -1,6 +1,6 @@
 @extends('layout.template')
 
-@section('title', 'Marcas')
+@section('title', 'Veículos')
 @section('content')
 @include('flash-message')
 <div class="container">
@@ -15,7 +15,7 @@
 
     <div class="clearfix"></div>
 
-    <table class="table table-striped  table-hover">
+    <table class="table table-striped table-hover">
         <thead>
             <tr>
                 <th scope="col">Id</th>
