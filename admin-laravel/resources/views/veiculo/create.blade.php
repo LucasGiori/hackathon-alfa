@@ -1,6 +1,6 @@
 @extends('layout.template')
 
-@section('title', 'Salvar Marca')
+@section('title', 'Salvar Veículo')
 @section('content')
     @if ($errors->any())
 
