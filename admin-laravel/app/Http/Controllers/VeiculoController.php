@@ -59,16 +59,19 @@ class VeiculoController extends Controller
 
     public function destroy($id)
     {
-        $veiculo = Veiculo::findOrFail($id);
-        $veiculo->delete();
+        try {
+            $veiculo = Veiculo::findOrFail($id);
+            $veiculo->delete();
 
-        return redirect('veiculo');
+            return redirect('veiculo');
+        } catch (\Throwable $th) {
+            return redirect('veiculo')->with('error', sprintf('Algo deu de errado! Error: %s', $th->getMessage()));
+        }
     }
 
     public function update ($id, VeiculoUpdateRequest $request)
     {
         try {
-            dd("oi");
             $validated = $request->validated();
             $veiculo = Veiculo::find($id);
             $this->populatingModel($veiculo, $request)->save();
@@ -165,5 +168,26 @@ class VeiculoController extends Controller
         $veiculo["marca"] = Marca::find($data->marca_id)->toArray();
 
         return $veiculo;
+    }
+
+    public static function countVeiculo()
+    {
+        $veiculo = Veiculo::all();
+
+        return  $veiculo->count();
+    }
+
+    public static function countMarca()
+    {
+        $marca = Marca::all();
+
+        return  $marca->count();
+    }
+
+    public static function countCor()
+    {
+        $cor = Cor::all();
+
+        return  $cor->count();
     }
 }

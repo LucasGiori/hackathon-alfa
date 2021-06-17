@@ -27,7 +27,7 @@
                 <div id="marcaHelp" class="form-text">Informe um texto descrevendo a marca. Ex: Chery</div>
                 @error('marca')
                 <div class="invalid-feedback">
-                    {{ $messages }}
+                    {{ $message }}
                 </div>
                 @enderror
             </div>

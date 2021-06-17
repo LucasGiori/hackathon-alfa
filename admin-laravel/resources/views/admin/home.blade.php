@@ -16,7 +16,7 @@
 
         <div class="main-content flex-1 bg-gray-100 mt-12 md:mt-2 pb-24 md:pb-5">
 
-          
+
 
             <div class="flex flex-wrap">
                 <div class="w-full md:w-1/2 xl:w-1/3 p-6">
@@ -28,7 +28,7 @@
                             </div>
                             <div class="flex-1 text-right md:text-center">
                                 <h5 class="font-bold uppercase text-gray-800">Total Veículos</h5>
-                                <h3 class="font-bold text-3xl">$count <span class="text-green-700"><i class="fas fa-car"></i></span></h3>
+                                <h3 class="font-bold text-3xl">{{\App\Http\Controllers\VeiculoController::countVeiculo()}} <span class="text-green-700"><i class="fas fa-car"></i></span></h3>
                             </div>
                         </div>
                     </div>
@@ -42,15 +42,15 @@
                                 <div class="rounded-full p-5 bg-green-600"><i class="fas fa-users fa-2x fa-inverse"></i></div>
                             </div>
                             <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold uppercase text-gray-800">Total Usuários</h5>
-                                <h3 class="font-bold text-3xl">$cont <span class="text-green-600"><i class="fas fa-exchange-alt"></i></span></h3>
+                                <h5 class="font-bold uppercase text-gray-800">Total Cores</h5>
+                                <h3 class="font-bold text-3xl">{{\App\Http\Controllers\VeiculoController::countCor()}} <span class="text-green-600"><i class="fas fa-exchange-alt"></i></span></h3>
                             </div>
                         </div>
                     </div>
                     <!--/Metric Card-->
                 </div>
-               
-               
+
+
                 <div class="w-full md:w-1/2 xl:w-1/3 p-6">
                     <!--Metric Card-->
                     <div class="bg-gradient-to-b from-gray-200 to-gray-100 border-b-4 border-green-500 rounded-lg shadow-xl p-5">
@@ -59,14 +59,14 @@
                                 <div class="rounded-full p-5 bg-green-700"><i class="fas fa-tasks fa-2x fa-inverse"></i></div>
                             </div>
                             <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold uppercase text-gray-800">Marcas</h5>
-                                <h3 class="font-bold text-3xl">$cont</h3>
+                                <h5 class="font-bold uppercase text-gray-800">Total Marcas</h5>
+                                <h3 class="font-bold text-3xl">{{\App\Http\Controllers\VeiculoController::countMarca()}} </h3>
                             </div>
                         </div>
                     </div>
                     <!--/Metric Card-->
                 </div>
-                
+
             </div>
 
 
@@ -142,7 +142,7 @@
                     </div>
                     <!--/Graph Card-->
                 </div>
-               
+
             </div>
         </div>
     </div>

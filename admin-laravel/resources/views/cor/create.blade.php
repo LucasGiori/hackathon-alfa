@@ -28,7 +28,7 @@
                 <div id="corHelp" class="form-text">Informe um texto descrevendo a cor. Ex: Amarelo</div>
                 @error('cor')
                 <div class="invalid-feedback">
-                    {{ $messages }}
+                    {{ $message }}
                 </div>
                 @enderror
             </div>

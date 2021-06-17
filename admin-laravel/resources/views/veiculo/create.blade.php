@@ -29,7 +29,7 @@
                     <div id="veiculoHelp" class="form-text">Informe o modelo do Veiculo. Ex: <strong>Arizzo 6</strong></div>
                     @error('modelo')
                     <div class="invalid-feedback">
-                        {{ $messages }}
+                        {{ $message }}
                     </div>
                     @enderror
                 </div>
@@ -39,7 +39,7 @@
                     <div id="veiculoHelp" class="form-text">Ex: <strong>2020</strong></div>
                     @error('anofabricacao')
                     <div class="invalid-feedback">
-                        {{ $messages }}
+                        {{ $message }}
                     </div>
                     @enderror
                 </div>
@@ -49,7 +49,7 @@
                     <div id="anoModeloHelp" class="form-text">Ex: <strong>2021</strong></div>
                     @error('modelo')
                     <div class="invalid-feedback">
-                        {{ $messages }}
+                        {{ $message }}
                     </div>
                     @enderror
                 </div>
@@ -59,7 +59,7 @@
                     <div id="veiculoHelp" class="form-text">Informe o valor. Ex: <strong>R$ 100.000,00</strong></div>
                     @error('valor')
                     <div class="invalid-feedback">
-                        {{ $messages }}
+                        {{ $message }}
                     </div>
                     @enderror
                 </div>
@@ -125,7 +125,7 @@
                     <div id="opcionaisHelp" class="form-text">Ex: <strong>- Air Bag, Bancos em Couro</strong></div>
                     @error('opcionais')
                     <div class="invalid-feedback">
-                        {{ $messages }}
+                        {{ $message }}
                     </div>
                     @enderror
                 </div>

@@ -28,7 +28,7 @@
       
      
     
-      <div class="bg-gray-200">
+      <div class="bg-white">
         <section class="py-5 mx-auto max-w-screen-xl  sm:flex flex-grow-0 sm:p-5">
         <article class="flex-col justify-center inline-flex self-stretch  p-6">
           <h1 class="uppercase font-semibold text-xl"> <%= `${veiculo.marca.marca} ${veiculo.modelo}` %></h1>
@@ -36,8 +36,9 @@
           <strong class="text-lg pb-2 font-normal font-sans sm:text-2xl"><%= `${veiculo.anofabricacao}/${veiculo.anomodelo}` %></strong>
           <strong class="text-lg pb-2 font-normal font-sans sm:text-2xl"><%= `${veiculo.cor.cor}` %></strong>
           <strong class="text-lg pb-2 font-normal font-sans sm:text-2xl"><%= `${veiculo.tipo}` %></strong>
-          <p class="text-sm pb-4">Jating . </p>
-        </article>
+          <p class="text-sm pb-4"><%= `${veiculo.opcionais}` %> </p>
+          <%- include('./components/text') %>
+          </article>
         <figure>
         <img src="<%=veiculo.fotoDestaque%>" alt="Foto Veículo" width="800" height="288"/>
         </figure>
