@@ -34,7 +34,7 @@
 
         <div class="flex flex-wrap items-center">
             <div class="flex flex-shrink md:w-1/3 justify-center md:justify-start text-white">
-                <a href="#">
+                <a href="/home" alt="Home Chery"> 
                 <img src="https://1000logos.net/wp-content/uploads/2020/04/Chery-Logo-1997.png" width="110px" alt="Chery Admin">
                 </a>
             </div>
