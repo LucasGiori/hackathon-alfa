@@ -31,7 +31,7 @@ class MarcaUpdateRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'marca.required' => "MarcaController é obrigatória!"
+            'marca.required' => "Marca é obrigatória!"
         ];
     }
 }
